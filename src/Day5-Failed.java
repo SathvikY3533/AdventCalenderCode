@@ -54,22 +54,21 @@ public class Day5 {
             count = 1;
             for(int i = 0; i < movesLine.length(); i++) {
                 if(isNum(movesLine.charAt(i)+"")) {
-                    if(count == 1) {
-                        movesAmt = Integer.parseInt(movesLine.charAt(i)+"");
-                        if(isNum(movesLine.charAt(i+1)+"") && i+1 < movesLine.length()) {
-                            movesAmt += Integer.parseInt(movesLine.charAt(i+1)+"");
+                    if(count == 1 && i == 5) {
+                        if(isNum(movesLine.charAt(i) + movesLine.charAt(i+1) + "")) {
+                            movesAmt = Integer.parseInt(movesLine.charAt(i) + movesLine.charAt(i+1) + "");
+                            System.out.println(movesLine.charAt(i) + movesLine.charAt(i+1));
+                        } else {
+                            movesAmt = Integer.parseInt(movesLine.charAt(i) + "");
                         }
-                    }
-                    if(count == 2) {
-                        movesOg = Integer.parseInt(movesLine.charAt(i)+"");
-                    }
-                    if(count == 3) {
-                        movesNew = Integer.parseInt(movesLine.charAt(i)+"");
+                    } else if(count == 2) {
+                        movesOg = Integer.parseInt(movesLine.charAt(i) + "");
+                    } else if(count == 3) {
+                        movesNew = Integer.parseInt(movesLine.charAt(i) + "");
                     }
                     count++;
                 }
             }
-            System.out.println("----*------");
 
             for(int i = 0; i < movesAmt; i++) {
                 Stack<String> stack1 = new Stack<>(), stack2 = new Stack<>();

@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class Day5 {
+public class Day5Failed {
     public static void main(String[] args) {
         Scanner scan = null;
         ArrayList<Stack<String>> crates = new ArrayList<>();
